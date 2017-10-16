@@ -1,8 +1,12 @@
-# Endian
-Write or Read data in Big-Endian or Little-Endian whatever you want.
+#ifndef ENDIAN_H
+#define ENDIAN_H
 
-## API
-```C
+#include <stdint.h>
+
+#ifdef __cplusplus
+	extern "C" {
+#endif
+
 /* Big-Endian */
 uint16_t readUint16InBigEndian(void* memory);
 uint32_t readUint32InBigEndian(void* memory);
@@ -37,4 +41,9 @@ int64_t readInt64InLittleEndian(void* memory);
 void writeInt16InLittleEndian(void* memory, int16_t value);
 void writeInt32InLittleEndian(void* memory, int32_t value);
 void writeInt64InLittleEndian(void* memory, int64_t value);
-```
+
+#ifdef __cplusplus
+	}
+#endif
+
+#endif
